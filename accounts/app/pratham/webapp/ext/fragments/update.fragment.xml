@@ -1,0 +1,109 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:upload="sap.m.upload"
+>
+    <Dialog
+        id="dailog"
+        title="Create Entry"
+        contentWidth="40%"
+    >
+        <content >
+            <VBox
+                class="sapUiMediumMargin"
+                id="vbox"
+            >
+                <Label
+                    required="true"
+                    id="accountName"
+                    text="Account Name"
+                />
+                <Input
+                    class="sapUiTinyMarginBottom"
+                    id="idAccountName"
+                />
+                <Label />
+                <Label
+                    required="true"
+                    id="geoAreaCode"
+                    text="Geographical Area Code"
+                />
+                <ComboBox
+                    id="idGeoAreaCode"
+                    items="{ path: '/deptviews'}"
+                    width="100%"
+                >
+                    <items>
+                        <core:Item
+                            text="{postalcode}"
+                            key="{postalcode}"
+                        />
+                    </items>
+                </ComboBox>
+                <Label />
+                <Label
+                    required="true"
+                    id="projectType"
+                    text="Project Type"
+                />
+                <MultiComboBox
+                    id="idProjectType"
+                    width="100%"
+                >
+                    <items>
+                        <core:Item 
+                            text="Steel"
+                            key="Steel"
+                        />
+                        <core:Item 
+                            text="MDPE"
+                            key="MDPE"
+                        />
+                        <core:Item 
+                            text="PE"
+                            key="PE"
+                        />
+                        <core:Item 
+                            text="PNG"
+                            key="PNG"
+                        />
+                        <core:Item 
+                            text="CNG"
+                            key="CNG"
+                        />
+                        <core:Item 
+                            text="LCNG"
+                            key="LCNG"
+                        />
+                    </items>
+                </MultiComboBox>
+                <Label />
+                <Label
+                    id="description"
+                    text="Description"
+                />
+                <TextArea
+                    class="sapUiTinyMarginBottom"
+                    id="idDescription"
+                    width="100%"
+                />
+            </VBox>
+        </content>
+        <buttons>
+            <Button
+                text="Submit"
+                press="onSumbit"
+                icon="sap-icon://accept"
+                type="Accept"
+                id="uploadBtn"
+            />
+            <Button
+                id="cancel"
+                press="handle_CloseBtn"
+                text="Cancel"
+                type="Reject"
+                icon="sap-icon://cancel"
+            />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>
